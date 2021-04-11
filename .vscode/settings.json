@@ -1,0 +1,10 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "git.ignoreLimitWarning": true,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "editor.detectIndentation": true,
+  "editor.insertSpaces": true
+}
