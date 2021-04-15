@@ -1,42 +1,26 @@
 import React from 'react';
-import { gql } from '@apollo/client';
 import client from './api';
+import { DEVICES } from './api/queries';
+import DevicesList from '../src/components/Home/DevicesList';
+import Header from '../src/components/Home/Header';
 
 export async function getServerSideProps() {
   const { data } = await client.query({
-    query: gql`
-      query Countries {
-        countries {
-          code
-          name
-          emoji
-        }
-      }
-    `,
+    query: DEVICES,
   });
 
   return {
     props: {
-      countries: data.countries.slice(0, 4),
+      devices: data.devices.data,
     },
   };
 }
 
-export default function Home({ countries }) {
-  return (
-    <div>
-      {countries.map((country) => (
-        <div key={country.code}>
-          <h3>{country.name}</h3>
-          <p>
-            {country.code}
-            {' '}
-            -
-            {' '}
-            {country.emoji}
-          </p>
-        </div>
-      ))}
-    </div>
-  );
-}
+const Home: React.FC = ({ devices }) => (
+  <>
+    <Header />
+    <DevicesList devices={devices} />
+  </>
+);
+
+export default Home;
