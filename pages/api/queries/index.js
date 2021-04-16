@@ -7,11 +7,7 @@ export const DEVICES = gql`
         code
         logo
         name
-        games {
-          data {
-            name
-          }
-        }
+        description: description_fr
       }
     }
   }
