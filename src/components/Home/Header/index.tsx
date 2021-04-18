@@ -1,8 +1,10 @@
 import React from 'react';
-import Content from './styles';
+import { Content, Background } from './styles';
 
 const Header = () => (
-  <Content />
+  <Content>
+    <Background />
+  </Content>
 );
 
 export default Header;
