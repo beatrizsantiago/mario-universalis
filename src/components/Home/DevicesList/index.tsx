@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import { List, Card, ImageBox } from './styles';
+import {
+  List, Card, ImageBox, Title, Description,
+} from './styles';
 
 interface Device {
   code: string
@@ -25,8 +27,12 @@ const DevicesList = ({ devices }: DevicesListProps) => (
             objectFit="contain"
           />
         </ImageBox>
-        <h6>{device.name}</h6>
-        {device.description}
+        <Title>
+          {device.name}
+        </Title>
+        <Description>
+          {device.description}
+        </Description>
       </Card>
     ))}
   </List>
