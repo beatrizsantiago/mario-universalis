@@ -14,7 +14,7 @@ export const Card = styled.div`
   align-items: center;
   width: 250px;
   height: 250px;
-  margin: 16px 8px 0px 8px;
+  margin: 8px;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.1);
