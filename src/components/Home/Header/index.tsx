@@ -1,9 +1,12 @@
 import React from 'react';
-import { Content, Background } from './styles';
+import Pagination from '../Pagination';
+import { Content, GradientBackground } from './styles';
 
 const Header = () => (
   <Content>
-    <Background />
+    <GradientBackground>
+      <Pagination />
+    </GradientBackground>
   </Content>
 );
 
