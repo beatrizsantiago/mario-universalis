@@ -17,3 +17,27 @@ export const DEVICES = gql`
     }
   }
 `;
+
+export const GAMES = gql`
+  query Games($page: Int, $search: String) {
+    games(page: $page, search: $search) {
+      data {
+        id
+        popularity
+        image
+        name
+        mariouniversalisURL
+        genres {
+          code
+          name
+          icon
+        }
+      }
+      pagination {
+        current_page
+        has_previous_page
+        has_next_page
+      }
+    }
+  }
+`;
