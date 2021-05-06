@@ -19,8 +19,8 @@ export const DEVICES = gql`
 `;
 
 export const GAMES = gql`
-  query Games($page: Int, $search: String) {
-    games(page: $page, search: $search) {
+  query Games($page: Int, $search: String, $device: DeviceCode) {
+    games(page: $page, search: $search, device: $device, order_by: { field: popularity, sort: DESC }) {
       data {
         id
         popularity
