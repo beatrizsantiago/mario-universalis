@@ -3,12 +3,23 @@ import SearchInput from './SearchInput';
 import Navigation from './Navigation';
 import { Box, Row, Title } from './styles';
 
-const NavBar = ({ title }) => (
+interface Pagination {
+  currentPage: string
+  hasPreviousPage: Boolean
+  hasNextPage: Boolean
+}
+
+interface NavBarProps {
+  title: string
+  pagination: Pagination
+}
+
+const NavBar = ({ title, pagination }: NavBarProps) => (
   <Box>
     <Title>{title}</Title>
     <Row>
       <SearchInput />
-      <Navigation />
+      <Navigation pagination={pagination} />
     </Row>
   </Box>
 );

@@ -7,18 +7,22 @@ import Header from '../src/components/Home/Header';
 export async function getServerSideProps() {
   const { data } = await client.query({
     query: DEVICES,
+    variables: {
+      page: 1,
+    },
   });
 
   return {
     props: {
       devices: data.devices.data,
+      pagination: data.devices.pagination,
     },
   };
 }
 
-const Home: React.FC = ({ devices }) => (
+const Home: React.FC = ({ devices, pagination }) => (
   <>
-    <Header />
+    <Header pagination={pagination} />
     <DevicesList devices={devices} />
   </>
 );

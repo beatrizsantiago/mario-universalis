@@ -2,15 +2,25 @@ import React from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Container, Button, Page } from './styles';
 
-const Navigation = () => (
+interface Pagination {
+  currentPage: string
+  hasPreviousPage: Boolean
+  hasNextPage: Boolean
+}
+
+interface NavigationProps {
+  pagination: Pagination
+}
+
+const Navigation = ({ pagination }: NavigationProps) => (
   <Container>
-    <Button left>
+    <Button left disabled={!pagination.hasPreviousPage}>
       <FiChevronLeft />
     </Button>
     <Page>
-      1
+      {pagination.currentPage}
     </Page>
-    <Button>
+    <Button disabled={!pagination.hasNextPage}>
       <FiChevronRight />
     </Button>
   </Container>
