@@ -12,6 +12,18 @@ export const Box = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0px 40px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    padding: 20px;
+  }
+`;
+
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const Title = styled.h1`
@@ -41,7 +53,7 @@ const PropsRightButton = css`
 export const Button = styled.button`
   ${PropsCenterAlign}
   ${(props) => (props.left ? PropsLeftButton : PropsRightButton)}
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #fff;
   width: 33.3%;
   height: 100%;
   border: none;
@@ -56,7 +68,7 @@ export const Page = styled.div`
   ${PropsCenterAlign}
   width: 33.3%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #fff;
   font-weight: 700;
   font-size: 12px;
   border-left: solid 1px #cccccc;
