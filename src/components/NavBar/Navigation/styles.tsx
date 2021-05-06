@@ -13,6 +13,11 @@ export const Container = styled.div`
   height: 30px;
 `;
 
+interface ButtonType {
+  left?: boolean
+  disabled: boolean
+}
+
 const PropsLeftButton = css`
   border-bottom-left-radius: 50%;
   border-top-left-radius: 50%;
@@ -23,7 +28,7 @@ const PropsRightButton = css`
   border-top-right-radius: 50%;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button.attrs((props) => ({ disabled: props.disabled }))<ButtonType>`
   ${PropsCenterAlign}
   ${(props) => (props.left ? PropsLeftButton : PropsRightButton)}
   background-color: #fff;
